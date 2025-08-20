@@ -1,0 +1,266 @@
+Continent_Name,Continent_Code,Country_Name,Two_Letter_Country_Code,latitude,longitude
+Asia,AS,"Afghanistan, Islamic Republic of",AF,54.61077,85.89763
+Europe,EU,"Albania, Republic of",AL,49.99418,21.73747
+Antarctica,AN,Antarctica (the territory South of 60 deg S),AQ,-68.88696,101.36638
+Africa,AF,"Algeria, People's Democratic Republic of",DZ,6.90549,20.507
+Oceania,OC,American Samoa,AS,-22.69431,133.88591
+Europe,EU,"Andorra, Principality of",AD,49.99418,21.73747
+Africa,AF,"Angola, Republic of",AO,6.90549,20.507
+North America,NA,Antigua and Barbuda,AG,49.08164,-118.88753
+Europe,EU,"Azerbaijan, Republic of",AZ,49.99418,21.73747
+Asia,AS,"Azerbaijan, Republic of",AZ,54.61077,85.89763
+South America,SA,"Argentina, Argentine Republic",AR,-18.58294,-60.52815
+Oceania,OC,"Australia, Commonwealth of",AU,-22.69431,133.88591
+Europe,EU,"Austria, Republic of",AT,49.99418,21.73747
+North America,NA,"Bahamas, Commonwealth of the",BS,49.08164,-118.88753
+Asia,AS,"Bahrain, Kingdom of",BH,54.61077,85.89763
+Asia,AS,"Bangladesh, People's Republic of",BD,54.61077,85.89763
+Europe,EU,"Armenia, Republic of",AM,49.99418,21.73747
+Asia,AS,"Armenia, Republic of",AM,54.61077,85.89763
+North America,NA,Barbados,BB,49.08164,-118.88753
+Europe,EU,"Belgium, Kingdom of",BE,49.99418,21.73747
+North America,NA,Bermuda,BM,49.08164,-118.88753
+Asia,AS,"Bhutan, Kingdom of",BT,54.61077,85.89763
+South America,SA,"Bolivia, Republic of",BO,-18.58294,-60.52815
+Europe,EU,Bosnia and Herzegovina,BA,49.99418,21.73747
+Africa,AF,"Botswana, Republic of",BW,6.90549,20.507
+Antarctica,AN,Bouvet Island (Bouvetoya),BV,-68.88696,101.36638
+South America,SA,"Brazil, Federative Republic of",BR,-18.58294,-60.52815
+North America,NA,Belize,BZ,49.08164,-118.88753
+Asia,AS,British Indian Ocean Territory (Chagos Archipelago),IO,54.61077,85.89763
+Oceania,OC,Solomon Islands,SB,-22.69431,133.88591
+North America,NA,British Virgin Islands,VG,49.08164,-118.88753
+Asia,AS,Brunei Darussalam,BN,54.61077,85.89763
+Europe,EU,"Bulgaria, Republic of",BG,49.99418,21.73747
+Asia,AS,"Myanmar, Union of",MM,54.61077,85.89763
+Africa,AF,"Burundi, Republic of",BI,6.90549,20.507
+Europe,EU,"Belarus, Republic of",BY,49.99418,21.73747
+Asia,AS,"Cambodia, Kingdom of",KH,54.61077,85.89763
+Africa,AF,"Cameroon, Republic of",CM,6.90549,20.507
+North America,NA,Canada,CA,49.08164,-118.88753
+Africa,AF,"Cape Verde, Republic of",CV,6.90549,20.507
+North America,NA,Cayman Islands,KY,49.08164,-118.88753
+Africa,AF,Central African Republic,CF,6.90549,20.507
+Asia,AS,"Sri Lanka, Democratic Socialist Republic of",LK,54.61077,85.89763
+Africa,AF,"Chad, Republic of",TD,6.90549,20.507
+South America,SA,"Chile, Republic of",CL,-18.58294,-60.52815
+Asia,AS,"China, People's Republic of",CN,54.61077,85.89763
+Asia,AS,Taiwan,TW,54.61077,85.89763
+Asia,AS,Christmas Island,CX,54.61077,85.89763
+Asia,AS,Cocos (Keeling) Islands,CC,54.61077,85.89763
+South America,SA,"Colombia, Republic of",CO,-18.58294,-60.52815
+Africa,AF,"Comoros, Union of the",KM,6.90549,20.507
+Africa,AF,Mayotte,YT,6.90549,20.507
+Africa,AF,"Congo, Republic of the",CG,6.90549,20.507
+Africa,AF,"Congo, Democratic Republic of the",CD,6.90549,20.507
+Oceania,OC,Cook Islands,CK,-22.69431,133.88591
+North America,NA,"Costa Rica, Republic of",CR,49.08164,-118.88753
+Europe,EU,"Croatia, Republic of",HR,49.99418,21.73747
+North America,NA,"Cuba, Republic of",CU,49.08164,-118.88753
+Europe,EU,"Cyprus, Republic of",CY,49.99418,21.73747
+Asia,AS,"Cyprus, Republic of",CY,54.61077,85.89763
+Europe,EU,Czech Republic,CZ,49.99418,21.73747
+Africa,AF,"Benin, Republic of",BJ,6.90549,20.507
+Europe,EU,"Denmark, Kingdom of",DK,49.99418,21.73747
+North America,NA,"Dominica, Commonwealth of",DM,49.08164,-118.88753
+North America,NA,Dominican Republic,DO,49.08164,-118.88753
+South America,SA,"Ecuador, Republic of",EC,-18.58294,-60.52815
+North America,NA,"El Salvador, Republic of",SV,49.08164,-118.88753
+Africa,AF,"Equatorial Guinea, Republic of",GQ,6.90549,20.507
+Africa,AF,"Ethiopia, Federal Democratic Republic of",ET,6.90549,20.507
+Africa,AF,"Eritrea, State of",ER,6.90549,20.507
+Europe,EU,"Estonia, Republic of",EE,49.99418,21.73747
+Europe,EU,Faroe Islands,FO,49.99418,21.73747
+South America,SA,Falkland Islands (Malvinas),FK,-18.58294,-60.52815
+Antarctica,AN,South Georgia and the South Sandwich Islands,GS,-68.88696,101.36638
+Oceania,OC,"Fiji, Republic of the Fiji Islands",FJ,-22.69431,133.88591
+Europe,EU,"Finland, Republic of",FI,49.99418,21.73747
+Europe,EU,Åland Islands,AX,49.99418,21.73747
+Europe,EU,"France, French Republic",FR,49.99418,21.73747
+South America,SA,French Guiana,GF,-18.58294,-60.52815
+Oceania,OC,French Polynesia,PF,-22.69431,133.88591
+Antarctica,AN,French Southern Territories,TF,-68.88696,101.36638
+Africa,AF,"Djibouti, Republic of",DJ,6.90549,20.507
+Africa,AF,"Gabon, Gabonese Republic",GA,6.90549,20.507
+Europe,EU,Georgia,GE,49.99418,21.73747
+Asia,AS,Georgia,GE,54.61077,85.89763
+Africa,AF,"Gambia, Republic of the",GM,6.90549,20.507
+Asia,AS,"Palestinian Territory, Occupied",PS,54.61077,85.89763
+Europe,EU,"Germany, Federal Republic of",DE,49.99418,21.73747
+Africa,AF,"Ghana, Republic of",GH,6.90549,20.507
+Europe,EU,Gibraltar,GI,49.99418,21.73747
+Oceania,OC,"Kiribati, Republic of",KI,-22.69431,133.88591
+Europe,EU,"Greece, Hellenic Republic",GR,49.99418,21.73747
+North America,NA,Greenland,GL,49.08164,-118.88753
+North America,NA,Grenada,GD,49.08164,-118.88753
+North America,NA,Guadeloupe,GP,49.08164,-118.88753
+Oceania,OC,Guam,GU,-22.69431,133.88591
+North America,NA,"Guatemala, Republic of",GT,49.08164,-118.88753
+Africa,AF,"Guinea, Republic of",GN,6.90549,20.507
+South America,SA,"Guyana, Co-operative Republic of",GY,-18.58294,-60.52815
+North America,NA,"Haiti, Republic of",HT,49.08164,-118.88753
+Antarctica,AN,Heard Island and McDonald Islands,HM,-68.88696,101.36638
+Europe,EU,Holy See (Vatican City State),VA,49.99418,21.73747
+North America,NA,"Honduras, Republic of",HN,49.08164,-118.88753
+Asia,AS,"Hong Kong, Special Administrative Region of China",HK,54.61077,85.89763
+Europe,EU,"Hungary, Republic of",HU,49.99418,21.73747
+Europe,EU,"Iceland, Republic of",IS,49.99418,21.73747
+Asia,AS,"India, Republic of",IN,54.61077,85.89763
+Asia,AS,"Indonesia, Republic of",ID,54.61077,85.89763
+Asia,AS,"Iran, Islamic Republic of",IR,54.61077,85.89763
+Asia,AS,"Iraq, Republic of",IQ,54.61077,85.89763
+Europe,EU,Ireland,IE,49.99418,21.73747
+Asia,AS,"Israel, State of",IL,54.61077,85.89763
+Europe,EU,"Italy, Italian Republic",IT,49.99418,21.73747
+Africa,AF,"Cote d'Ivoire, Republic of",CI,6.90549,20.507
+North America,NA,Jamaica,JM,49.08164,-118.88753
+Asia,AS,Japan,JP,54.61077,85.89763
+Europe,EU,"Kazakhstan, Republic of",KZ,49.99418,21.73747
+Asia,AS,"Kazakhstan, Republic of",KZ,54.61077,85.89763
+Asia,AS,"Jordan, Hashemite Kingdom of",JO,54.61077,85.89763
+Africa,AF,"Kenya, Republic of",KE,6.90549,20.507
+Asia,AS,"Korea, Democratic People's Republic of",KP,54.61077,85.89763
+Asia,AS,"Korea, Republic of",KR,54.61077,85.89763
+Asia,AS,"Kuwait, State of",KW,54.61077,85.89763
+Asia,AS,Kyrgyz Republic,KG,54.61077,85.89763
+Asia,AS,Lao People's Democratic Republic,LA,54.61077,85.89763
+Asia,AS,"Lebanon, Lebanese Republic",LB,54.61077,85.89763
+Africa,AF,"Lesotho, Kingdom of",LS,6.90549,20.507
+Europe,EU,"Latvia, Republic of",LV,49.99418,21.73747
+Africa,AF,"Liberia, Republic of",LR,6.90549,20.507
+Africa,AF,Libyan Arab Jamahiriya,LY,6.90549,20.507
+Europe,EU,"Liechtenstein, Principality of",LI,49.99418,21.73747
+Europe,EU,"Lithuania, Republic of",LT,49.99418,21.73747
+Europe,EU,"Luxembourg, Grand Duchy of",LU,49.99418,21.73747
+Asia,AS,"Macao, Special Administrative Region of China",MO,54.61077,85.89763
+Africa,AF,"Madagascar, Republic of",MG,6.90549,20.507
+Africa,AF,"Malawi, Republic of",MW,6.90549,20.507
+Asia,AS,Malaysia,MY,54.61077,85.89763
+Asia,AS,"Maldives, Republic of",MV,54.61077,85.89763
+Africa,AF,"Mali, Republic of",ML,6.90549,20.507
+Europe,EU,"Malta, Republic of",MT,49.99418,21.73747
+North America,NA,Martinique,MQ,49.08164,-118.88753
+Africa,AF,"Mauritania, Islamic Republic of",MR,6.90549,20.507
+Africa,AF,"Mauritius, Republic of",MU,6.90549,20.507
+North America,NA,"Mexico, United Mexican States",MX,49.08164,-118.88753
+Europe,EU,"Monaco, Principality of",MC,49.99418,21.73747
+Asia,AS,Mongolia,MN,54.61077,85.89763
+Europe,EU,"Moldova, Republic of",MD,49.99418,21.73747
+Europe,EU,"Montenegro, Republic of",ME,49.99418,21.73747
+North America,NA,Montserrat,MS,49.08164,-118.88753
+Africa,AF,"Morocco, Kingdom of",MA,6.90549,20.507
+Africa,AF,"Mozambique, Republic of",MZ,6.90549,20.507
+Asia,AS,"Oman, Sultanate of",OM,54.61077,85.89763
+Africa,AF,"Namibia, Republic of",NA,6.90549,20.507
+Oceania,OC,"Nauru, Republic of",NR,-22.69431,133.88591
+Asia,AS,"Nepal, State of",NP,54.61077,85.89763
+Europe,EU,"Netherlands, Kingdom of the",NL,49.99418,21.73747
+North America,NA,Netherlands Antilles,AN,49.08164,-118.88753
+North America,NA,Curaçao,CW,49.08164,-118.88753
+North America,NA,Aruba,AW,49.08164,-118.88753
+North America,NA,Sint Maarten (Netherlands),SX,49.08164,-118.88753
+North America,NA,"Bonaire, Sint Eustatius and Saba",BQ,49.08164,-118.88753
+Oceania,OC,New Caledonia,NC,-22.69431,133.88591
+Oceania,OC,"Vanuatu, Republic of",VU,-22.69431,133.88591
+Oceania,OC,New Zealand,NZ,-22.69431,133.88591
+North America,NA,"Nicaragua, Republic of",NI,49.08164,-118.88753
+Africa,AF,"Niger, Republic of",NE,6.90549,20.507
+Africa,AF,"Nigeria, Federal Republic of",NG,6.90549,20.507
+Oceania,OC,Niue,NU,-22.69431,133.88591
+Oceania,OC,Norfolk Island,NF,-22.69431,133.88591
+Europe,EU,"Norway, Kingdom of",NO,49.99418,21.73747
+Oceania,OC,"Northern Mariana Islands, Commonwealth of the",MP,-22.69431,133.88591
+Oceania,OC,United States Minor Outlying Islands,UM,-22.69431,133.88591
+North America,NA,United States Minor Outlying Islands,UM,49.08164,-118.88753
+Oceania,OC,"Micronesia, Federated States of",FM,-22.69431,133.88591
+Oceania,OC,"Marshall Islands, Republic of the",MH,-22.69431,133.88591
+Oceania,OC,"Palau, Republic of",PW,-22.69431,133.88591
+Asia,AS,"Pakistan, Islamic Republic of",PK,54.61077,85.89763
+North America,NA,"Panama, Republic of",PA,49.08164,-118.88753
+Oceania,OC,"Papua New Guinea, Independent State of",PG,-22.69431,133.88591
+South America,SA,"Paraguay, Republic of",PY,-18.58294,-60.52815
+South America,SA,"Peru, Republic of",PE,-18.58294,-60.52815
+Asia,AS,"Philippines, Republic of the",PH,54.61077,85.89763
+Oceania,OC,Pitcairn Islands,PN,-22.69431,133.88591
+Europe,EU,"Poland, Republic of",PL,49.99418,21.73747
+Europe,EU,"Portugal, Portuguese Republic",PT,49.99418,21.73747
+Africa,AF,"Guinea-Bissau, Republic of",GW,6.90549,20.507
+Asia,AS,"Timor-Leste, Democratic Republic of",TL,54.61077,85.89763
+North America,NA,"Puerto Rico, Commonwealth of",PR,49.08164,-118.88753
+Asia,AS,"Qatar, State of",QA,54.61077,85.89763
+Africa,AF,Reunion,RE,6.90549,20.507
+Europe,EU,Romania,RO,49.99418,21.73747
+Europe,EU,Russian Federation,RU,49.99418,21.73747
+Asia,AS,Russian Federation,RU,54.61077,85.89763
+Africa,AF,"Rwanda, Republic of",RW,6.90549,20.507
+North America,NA,Saint Barthelemy,BL,49.08164,-118.88753
+Africa,AF,Saint Helena,SH,6.90549,20.507
+North America,NA,"Saint Kitts and Nevis, Federation of",KN,49.08164,-118.88753
+North America,NA,Anguilla,AI,49.08164,-118.88753
+North America,NA,Saint Lucia,LC,49.08164,-118.88753
+North America,NA,Saint Martin,MF,49.08164,-118.88753
+North America,NA,Saint Pierre and Miquelon,PM,49.08164,-118.88753
+North America,NA,Saint Vincent and the Grenadines,VC,49.08164,-118.88753
+Europe,EU,"San Marino, Republic of",SM,49.99418,21.73747
+Africa,AF,"Sao Tome and Principe, Democratic Republic of",ST,6.90549,20.507
+Asia,AS,"Saudi Arabia, Kingdom of",SA,54.61077,85.89763
+Africa,AF,"Senegal, Republic of",SN,6.90549,20.507
+Europe,EU,"Serbia, Republic of",RS,49.99418,21.73747
+Africa,AF,"Seychelles, Republic of",SC,6.90549,20.507
+Africa,AF,"Sierra Leone, Republic of",SL,6.90549,20.507
+Asia,AS,"Singapore, Republic of",SG,54.61077,85.89763
+Europe,EU,Slovakia (Slovak Republic),SK,49.99418,21.73747
+Asia,AS,"Vietnam, Socialist Republic of",VN,54.61077,85.89763
+Europe,EU,"Slovenia, Republic of",SI,49.99418,21.73747
+Africa,AF,"Somalia, Somali Republic",SO,6.90549,20.507
+Africa,AF,"South Africa, Republic of",ZA,6.90549,20.507
+Africa,AF,"Zimbabwe, Republic of",ZW,6.90549,20.507
+Europe,EU,"Spain, Kingdom of",ES,49.99418,21.73747
+Africa,AF,South Sudan,SS,6.90549,20.507
+Africa,AF,Western Sahara,EH,6.90549,20.507
+Africa,AF,"Sudan, Republic of",SD,6.90549,20.507
+South America,SA,"Suriname, Republic of",SR,-18.58294,-60.52815
+Europe,EU,Svalbard & Jan Mayen Islands,SJ,49.99418,21.73747
+Africa,AF,"Swaziland, Kingdom of",SZ,6.90549,20.507
+Europe,EU,"Sweden, Kingdom of",SE,49.99418,21.73747
+Europe,EU,"Switzerland, Swiss Confederation",CH,49.99418,21.73747
+Asia,AS,Syrian Arab Republic,SY,54.61077,85.89763
+Asia,AS,"Tajikistan, Republic of",TJ,54.61077,85.89763
+Asia,AS,"Thailand, Kingdom of",TH,54.61077,85.89763
+Africa,AF,"Togo, Togolese Republic",TG,6.90549,20.507
+Oceania,OC,Tokelau,TK,-22.69431,133.88591
+Oceania,OC,"Tonga, Kingdom of",TO,-22.69431,133.88591
+North America,NA,"Trinidad and Tobago, Republic of",TT,49.08164,-118.88753
+Asia,AS,United Arab Emirates,AE,54.61077,85.89763
+Africa,AF,"Tunisia, Tunisian Republic",TN,6.90549,20.507
+Europe,EU,"Turkey, Republic of",TR,49.99418,21.73747
+Asia,AS,"Turkey, Republic of",TR,54.61077,85.89763
+Asia,AS,Turkmenistan,TM,54.61077,85.89763
+North America,NA,Turks and Caicos Islands,TC,49.08164,-118.88753
+Oceania,OC,Tuvalu,TV,-22.69431,133.88591
+Africa,AF,"Uganda, Republic of",UG,6.90549,20.507
+Europe,EU,Ukraine,UA,49.99418,21.73747
+Europe,EU,"Macedonia, The Former Yugoslav Republic of",MK,49.99418,21.73747
+Africa,AF,"Egypt, Arab Republic of",EG,6.90549,20.507
+Europe,EU,United Kingdom of Great Britain & Northern Ireland,GB,49.99418,21.73747
+Europe,EU,"Guernsey, Bailiwick of",GG,49.99418,21.73747
+Europe,EU,"Jersey, Bailiwick of",JE,49.99418,21.73747
+Europe,EU,Isle of Man,IM,49.99418,21.73747
+Africa,AF,"Tanzania, United Republic of",TZ,6.90549,20.507
+North America,NA,United States of America,US,49.08164,-118.88753
+North America,NA,United States Virgin Islands,VI,49.08164,-118.88753
+Africa,AF,Burkina Faso,BF,6.90549,20.507
+South America,SA,"Uruguay, Eastern Republic of",UY,-18.58294,-60.52815
+Asia,AS,"Uzbekistan, Republic of",UZ,54.61077,85.89763
+South America,SA,"Venezuela, Bolivarian Republic of",VE,-18.58294,-60.52815
+Oceania,OC,Wallis and Futuna,WF,-22.69431,133.88591
+Oceania,OC,"Samoa, Independent State of",WS,-22.69431,133.88591
+Asia,AS,Yemen,YE,54.61077,85.89763
+Africa,AF,"Zambia, Republic of",ZM,6.90549,20.507
+Oceania,OC,Disputed Territory,XX,-22.69431,133.88591
+Asia,AS,Iraq-Saudi Arabia Neutral Zone,XE,54.61077,85.89763
+Asia,AS,United Nations Neutral Zone,XD,54.61077,85.89763
+Asia,AS,Spratly Islands,XS,54.61077,85.89763
+Asia,AS,Gaza Strip,GZ,54.61077,85.89763
+Europe,EU,Kosovo,XK,49.99418,21.73747
+North America,NA,West Indies,WI,49.08164,-118.88753
