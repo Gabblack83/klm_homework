@@ -6,6 +6,7 @@ from flask import Flask, send_file, request
 from build_vue.build import build_vue
 from common.api_helpers import ApiResponse, send_response, error_handler
 from common.conventions import VUE_STATIC_FOLDER
+from repository.base_data_repository import BaseDataRepository
 from repository.data_repository import DataRepository
 from service.data_service import DataService
 
@@ -13,7 +14,7 @@ app = Flask(__name__)
 
 load_dotenv()
 LOCAL_DEV_ENV: bool = os.getenv("LOCAL_DEV_ENV") == "True"
-data_repository = DataRepository()
+data_repository: BaseDataRepository = DataRepository()
 data_service = DataService(data_repository)
 
 
