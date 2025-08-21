@@ -12,8 +12,12 @@ COPY ./vue ./vue
 RUN cd vue && npm i
 COPY ./build_vue ./build_vue
 COPY ./common ./common
+COPY ./data ./data
+COPY ./exceptions ./exceptions
+COPY ./repository ./repository
+COPY ./service ./service
 COPY app.py ${WORKING_DIR}
-ENV PYTHONPATH ${PATHONPATH}:${WORKING_DIR}
+ENV PYTHONPATH ${WORKING_DIR}
 RUN python3 ./build_vue/build.py
 
 RUN useradd -g 0 notrootuser
