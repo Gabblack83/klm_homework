@@ -5,69 +5,114 @@
         </section>
         <section class="sub-header">
             <div>
-                <h4>Data points with valid location coordinates</h4>
+                <h5>Data points with valid location coordinates</h5>
             </div>
             <div class="header-form-wrapper">
-                
                 <b>Select Year</b>
-                
+
                 <div class="year-select-dropdown">
                     <BFormSelect v-model="selectedYear" :options="yearList" />
                 </div>
                 <div class="roll-up-button-wrapper">
-                    <BButton 
-                    :variant=getRollUpButtonVariant 
-                    :disabled="currentLevel==='continent'"
-                    @click="rollUpALevel()"
+                    <BButton
+                        :variant="getRollUpButtonVariant"
+                        :disabled="currentLevel === 'continent'"
+                        @click="rollUpALevel()"
                         >Roll up to previous level
                     </BButton>
                 </div>
             </div>
-            
-
         </section>
-        
+
         <section class="data-wrapper">
             <div class="continent-level-data-wrapper" v-if="data">
-                <LMap :zoom="currentZoomLevel" :center="currentCentroid" style="height: 500px; width: 45vw">
-                    <LTileLayer :url="tileUrl" />
-                    <LMarker 
-                    v-for="(item, index) in data" 
-                    :key="index" 
-                    :lat-lng="[item['latitude'], item['longitude']]">
-                        <LPopup
-                        v-if="currentLevel === 'detail'">
-                            <p><b>Accident/Incident Date:</b> {{ item['date'] }}</p>
-                            <p><b>Location:</b> {{ item['location'] }}</p>
-                            <p><b>Aircraft Type:</b> {{ item['aircraftModel'] }}</p>
-                            <p><b>Fatal:</b> {{ item['totalFatalities'] > 0 ? 'Yes' : 'No' }}</p>
+                <LMap
+                    id="map"
+                    :zoom="currentZoomLevel"
+                    :center="currentCentroid"
+                    style="height: 500px; width: 45vw"
+                >
+                    <LTileLayer :url="tileUrl" id="mapTile" />
+                    <div id="dummyClickTarget"></div>
+                    <LMarker
+                        v-for="(item, index) in data"
+                        :key="index"
+                        :lat-lng="[item['latitude'], item['longitude']]"
+                    >
+                        <LPopup v-if="currentLevel === 'detail'">
+                            <p>
+                                <b>Accident/Incident Date:</b>
+                                {{ item["date"] }}
+                            </p>
+                            <p><b>Location:</b> {{ item["location"] }}</p>
+                            <p>
+                                <b>Aircraft Type:</b>
+                                {{ item["aircraftModel"] }}
+                            </p>
+                            <p>
+                                <b>Fatal:</b>
+                                {{ item["totalFatalities"] > 0 ? "Yes" : "No" }}
+                            </p>
                         </LPopup>
-                        <LPopup v-else 
-                        @click="drillDownALevel(item)">
-                            <p><b>{{ getCapitalizedLevelName }}:</b> {{ item[`${currentLevel}Name`] }}</p>
-                            <p><b>Total crashes / incidents:</b> {{ item["totalIncidentCount"] }}</p>
+                        <LPopup v-else>
+                            <p>
+                                <b>{{ getCapitalizedLevelName }}:</b>
+                                {{ item[`${currentLevel}Name`] }}
+                            </p>
+                            <p>
+                                <b>Total crashes / incidents:</b>
+                                {{ item["totalIncidentCount"] }}
+                            </p>
+                            <div class="popup-button">
+                                <BButton
+                                    variant="primary"
+                                    size="sm"
+                                    @click="drillDownALevel(item)"
+                                    >See details
+                                </BButton>
+                            </div>
                         </LPopup>
                     </LMarker>
                 </LMap>
-                <b-table 
-                striped hover 
-                :items="data"
-                :fields="tableFields"
-                class="table-class"
-                selectable="true"
-                sortable="true"
-                responsive="true"
-                sticky-header="true"
-                select-mode="single"
-                @row-selected="drillDownALevel">
+                <BPopover
+                    target="map"
+                    placement="bottom-end"
+                    v-if="currentLevel !== 'detail'"
+                >
+                    <template #title>How to use the map?</template>
+                    Click on the marker to see location details and click on the
+                    'See details' button to drill down to a more detailed layer
+                </BPopover>
+                <b-table
+                    id="table"
+                    striped
+                    hover
+                    :items="data"
+                    :fields="tableFields"
+                    class="table-class"
+                    selectable="true"
+                    sortable="true"
+                    responsive="true"
+                    sticky-header="true"
+                    select-mode="single"
+                    @row-selected="drillDownALevel"
+                >
                 </b-table>
-            </div> 
+                <BPopover
+                    target="table"
+                    placement="bottom-end"
+                    v-if="currentLevel !== 'detail'"
+                >
+                    <template #title>How to use the table?</template>
+                    Click on a row to drill down to a more detailed layer
+                </BPopover>
+            </div>
         </section>
     </div>
 </template>
 
 <script>
-import { BButton, BFormSelect, BTable } from "bootstrap-vue-next";
+import { BButton, BFormSelect, BPopover, BTable } from "bootstrap-vue-next";
 import { LMap, LTileLayer, LMarker, LPopup } from "@vue-leaflet/vue-leaflet";
 import { APICall } from "@/helpers/common";
 import { nextTick } from "vue";
@@ -75,8 +120,14 @@ import { nextTick } from "vue";
 export default {
     name: "App",
     components: {
-        BFormSelect, BTable, BButton,
-        LMap, LTileLayer, LMarker, LPopup
+        BFormSelect,
+        BTable,
+        BButton,
+        BPopover,
+        LMap,
+        LTileLayer,
+        LMarker,
+        LPopup,
     },
     data() {
         return {
@@ -90,9 +141,14 @@ export default {
             currentCentroid: [0.0, -10.0],
             currentZoomLevel: 1,
             currentLevel: "continent",
-            tableFields: this.turnTableFieldsToSortable(["continentName", "totalIncidentCount", 
-            "totalFatalities", "totalSeriousInjuries", "totalMinorInjuries", "totalUninjured"]),
-
+            tableFields: this.turnTableFieldsToSortable([
+                "continentName",
+                "totalIncidentCount",
+                "totalFatalities",
+                "totalSeriousInjuries",
+                "totalMinorInjuries",
+                "totalUninjured",
+            ]),
         };
     },
     methods: {
@@ -108,111 +164,177 @@ export default {
         },
         async loadContinentLevelData() {
             this.loading = true;
-            this.data = await APICall(`/api/get_continent_level_aggregation/?year=${this.selectedYear}`);
+            this.data = await APICall(
+                `/api/get_continent_level_aggregation/?year=${this.selectedYear}`
+            );
             this.currentCentroid = [0.0, -10.0];
-             setTimeout(() => {
+            setTimeout(() => {
                 this.currentZoomLevel = 1;
             }, "300");
-            this.currentLevel = "continent"
-            this.tableFields = this.turnTableFieldsToSortable(
-                ["continentName", "totalIncidentCount", "totalFatalities", 
-                "totalSeriousInjuries", "totalMinorInjuries", "totalUninjured"])
+            this.currentLevel = "continent";
+            this.tableFields = this.turnTableFieldsToSortable([
+                "continentName",
+                "totalIncidentCount",
+                "totalFatalities",
+                "totalSeriousInjuries",
+                "totalMinorInjuries",
+                "totalUninjured",
+            ]);
             this.loading = false;
         },
 
         async drillDownALevel(data) {
-            if (this.currentLevel !== 'detail') {
+            if (this.currentLevel !== "detail") {
                 this.loading = true;
-                const attributes = this.getNextLevelAttributes(this.currentLevel, data)
+                const attributes = this.getNextLevelAttributes(
+                    this.currentLevel,
+                    data
+                );
                 this.data = await APICall(attributes.apiToCall);
-                this.tableFields = this.turnTableFieldsToSortable(attributes.tableFields)
+                this.tableFields = this.turnTableFieldsToSortable(
+                    attributes.tableFields
+                );
                 nextTick(() => {
                     this.currentCentroid = [data.latitude, data.longitude];
-                })
-                // Timeout is necessary, as it has to wait until Leaflet rerenders otherwise 
+                });
+                // Timeout is necessary, as it has to wait until Leaflet rerenders otherwise
                 // it defaults back to the former centroid.
                 setTimeout(() => {
                     this.currentZoomLevel = attributes.zoomLevel;
                 }, "300");
-
+                this.simulateAClickOnMap();
                 this.currentLevel = attributes.nextLevel;
                 this.loading = false;
             }
         },
         getNextLevelAttributes(currentLevel, eventData) {
-            const attributes = {}
+            const attributes = {};
             if (currentLevel === "continent") {
-                attributes["apiToCall"] = `/api/get_country_level_aggregation/?year=${this.selectedYear}&continent=${eventData.continentName}`;
-                attributes["tableFields"] = ["countryName", "totalIncidentCount", "totalFatalities", 
-                "totalSeriousInjuries", "totalMinorInjuries", "totalUninjured"]
+                attributes[
+                    "apiToCall"
+                ] = `/api/get_country_level_aggregation/?year=${this.selectedYear}&continent=${eventData.continentName}`;
+                attributes["tableFields"] = [
+                    "countryName",
+                    "totalIncidentCount",
+                    "totalFatalities",
+                    "totalSeriousInjuries",
+                    "totalMinorInjuries",
+                    "totalUninjured",
+                ];
                 attributes["zoomLevel"] = 3;
-                attributes["nextLevel"] = "country"
+                attributes["nextLevel"] = "country";
                 this.continent = eventData.continentName;
-                this.previousCentoid = [eventData.latitude, eventData.longitude]
+                this.previousCentoid = [
+                    eventData.latitude,
+                    eventData.longitude,
+                ];
             } else {
-                attributes["apiToCall"] = `/api/get_detail_level/?year=${this.selectedYear}&country=${eventData.countryName}`;
-                attributes["tableFields"] = ["date", "location", "aircraftModel", "totalFatalities", 
-                "totalSeriousInjuries", "totalMinorInjuries", "totalUninjured"]
+                attributes[
+                    "apiToCall"
+                ] = `/api/get_detail_level/?year=${this.selectedYear}&country=${eventData.countryName}`;
+                attributes["tableFields"] = [
+                    "date",
+                    "location",
+                    "aircraftModel",
+                    "totalFatalities",
+                    "totalSeriousInjuries",
+                    "totalMinorInjuries",
+                    "totalUninjured",
+                ];
                 attributes["zoomLevel"] = 4;
-                attributes["nextLevel"] = "detail"
+                attributes["nextLevel"] = "detail";
             }
             return attributes;
         },
         turnTableFieldsToSortable(tableFields) {
             const sortableTableFields = [];
-            tableFields.forEach(e => {
+            tableFields.forEach((e) => {
                 sortableTableFields.push({
-                    key: e, sortable: true
-                })
+                    key: e,
+                    sortable: true,
+                });
             });
             return sortableTableFields;
         },
-        async rollUpALevel(){
-            if (this.currentLevel !== 'continent') {
+        async rollUpALevel() {
+            if (this.currentLevel !== "continent") {
                 this.loading = true;
-                const attributes = this.getPreviousLevelAttributes(this.currentLevel, this.data)
+                const attributes = this.getPreviousLevelAttributes(
+                    this.currentLevel,
+                    this.data
+                );
                 this.data = await APICall(attributes.apiToCall);
-                this.tableFields = this.turnTableFieldsToSortable(attributes.tableFields)
+                this.tableFields = this.turnTableFieldsToSortable(
+                    attributes.tableFields
+                );
                 nextTick(() => {
                     this.currentCentroid = attributes.centroid;
-                })
-                // Timeout is necessary, as it has to wait until Leaflet rerenders otherwise 
+                });
+                // Timeout is necessary, as it has to wait until Leaflet rerenders otherwise
                 // it defaults back to the former centroid.
                 setTimeout(() => {
                     this.currentZoomLevel = attributes.zoomLevel;
                 }, "300");
-
+                this.simulateAClickOnMap();
                 this.currentLevel = attributes.nextLevel;
                 this.loading = false;
             }
         },
         getPreviousLevelAttributes(currentLevel) {
-            const attributes = {}
+            const attributes = {};
             if (currentLevel === "detail") {
-                attributes["apiToCall"] = `/api/get_country_level_aggregation/?year=${this.selectedYear}&continent=${this.continent}`;
-                attributes["tableFields"] = ["countryName", "totalIncidentCount", "totalFatalities", 
-                "totalSeriousInjuries", "totalMinorInjuries", "totalUninjured"]
+                attributes[
+                    "apiToCall"
+                ] = `/api/get_country_level_aggregation/?year=${this.selectedYear}&continent=${this.continent}`;
+                attributes["tableFields"] = [
+                    "countryName",
+                    "totalIncidentCount",
+                    "totalFatalities",
+                    "totalSeriousInjuries",
+                    "totalMinorInjuries",
+                    "totalUninjured",
+                ];
                 attributes["zoomLevel"] = 3;
-                attributes["nextLevel"] = "country"
+                attributes["nextLevel"] = "country";
                 attributes["centroid"] = this.previousCentoid;
             } else {
-                attributes["apiToCall"] = `/api/get_continent_level_aggregation/?year=${this.selectedYear}`;
-                attributes["tableFields"] = ["continentName", "totalIncidentCount", "totalFatalities", 
-                "totalSeriousInjuries", "totalMinorInjuries", "totalUninjured"]
+                attributes[
+                    "apiToCall"
+                ] = `/api/get_continent_level_aggregation/?year=${this.selectedYear}`;
+                attributes["tableFields"] = [
+                    "continentName",
+                    "totalIncidentCount",
+                    "totalFatalities",
+                    "totalSeriousInjuries",
+                    "totalMinorInjuries",
+                    "totalUninjured",
+                ];
                 attributes["zoomLevel"] = 1;
-                attributes["nextLevel"] = "continent"
-                attributes["centroid"] = [0.0, -10.0]
+                attributes["nextLevel"] = "continent";
+                attributes["centroid"] = [0.0, -10.0];
             }
             return attributes;
-        }
+        },
+        simulateAClickOnMap() {
+            /* Sometimes the popup remains open after drill-level transition. To deal with this 
+            a mouse-click is simulated on the rerendered map. The click collapses the popup. 
+            A timeout is necessary to wait for the map to get rendered */
+            setTimeout(() => {
+                const element = document.getElementById("dummyClickTarget");
+                element.click();
+            }, "500");
+        },
     },
     computed: {
         getCapitalizedLevelName() {
-            return String(this.currentLevel).charAt(0).toUpperCase() + String(this.currentLevel).slice(1)
+            return (
+                String(this.currentLevel).charAt(0).toUpperCase() +
+                String(this.currentLevel).slice(1)
+            );
         },
         getRollUpButtonVariant() {
-            return this.currentLevel==="continent" ? "secondary" : "primary";
-        }
+            return this.currentLevel === "continent" ? "secondary" : "primary";
+        },
     },
     async created() {
         await this.loadYearList();
@@ -222,9 +344,9 @@ export default {
         selectedYear: {
             async handler() {
                 await this.loadContinentLevelData();
-            }
+            },
         },
-    }
+    },
 };
 </script>
 
@@ -241,8 +363,8 @@ export default {
     justify-content: space-between;
     margin: 20px 30px 20px 30px;
 }
-.sub-header h4 {
-    color: #00A1E4;
+.sub-header h5 {
+    color: #00a1e4;
 }
 .header-form-wrapper {
     display: flex;
@@ -263,7 +385,7 @@ export default {
     justify-content: center;
 }
 .year-list-selector {
-    width: 20vw; 
+    width: 20vw;
 }
 .roll-up-button-wrapper {
     margin-left: 2rem;
@@ -273,14 +395,18 @@ export default {
     justify-content: space-between;
     margin-top: 30px;
 }
+.popup-button {
+    display: flex;
+    justify-content: center;
+}
 .table-class {
-    width: 45vw; 
-    height: 500px; 
-    max-height: 500px;  
+    width: 45vw;
+    height: 500px;
+    max-height: 500px;
     font-size: 12px;
 }
 .btn-primary {
-    --bs-btn-bg: #00A1E4;
-    --bs-btn-border-color: #00A1E4;
+    --bs-btn-bg: #00a1e4;
+    --bs-btn-border-color: #00a1e4;
 }
 </style>
