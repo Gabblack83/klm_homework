@@ -39,6 +39,7 @@ Due to the limited time I was able to spend on this assignment the following tra
   - etc.
 - I used Flask as a quick and easy framework. No production grade WSGI server was added. 
 Normally, I would probably use FastAPI and an ASGI server.
+- I used pip for installing packages. Normally, I would use something with a lock file, like poetry.
 - No component tests in the client side code.
 - I built a quasi monolith. Normally I would not consider Python as Vue's server side directly, 
 but this way I spared some time by omitting the node.js server side from the middle.
