@@ -409,4 +409,10 @@ export default {
     --bs-btn-bg: #00a1e4;
     --bs-btn-border-color: #00a1e4;
 }
+:deep(.popover) {
+    font-size: 8px;
+}
+:deep(.popover-header) {
+    font-size: 10px;
+}
 </style>

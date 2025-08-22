@@ -9,11 +9,11 @@
 
 `docker run -it -p 8080:8001 klm_homework:0.0.1`
 - It port-forwards port 8001 of the container to your local 8080 port
-- You can access the application on your localhost at port 8080
+- You can access the application on your localhost at port 8080 (http://localhost:8080)
 
 ## Deviations from preferred tech stack
 I used Vue.js instead of the preferred Angular.js due to being familiar 
-with the former and have no previous experience with the later.
+with the former and have no previous experience with the latter.
 
 ## Additional Data
 I added 2 extra datasets to the module to be able to achieve what I had in mind. 
@@ -36,6 +36,7 @@ Due to the limited time I was able to spend on this assignment the following tra
   - secure HTTP headers
   - CSRF protection (only GET calls are present anyway)
   - session management
+  - HTTPS
   - etc.
 - I used Flask as a quick and easy framework. No production grade WSGI server was added. 
 Normally, I would probably use FastAPI and an ASGI server.
